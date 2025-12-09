@@ -43,21 +43,21 @@ export function CookieBanner() {
           </p>
           <button
             onClick={declineCookies}
-            className="text-muted-foreground hover:text-foreground shrink-0"
+            className="text-muted-foreground hover:text-foreground shrink-0 p-2 -m-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
             aria-label="Close"
           >
-            <X className="h-4 w-4" />
+            <X className="h-5 w-5" />
           </button>
         </div>
-        <div className="flex gap-2">
-          <Button size="sm" onClick={acceptCookies} className="flex-1">
+        <div className="flex gap-3">
+          <Button size="lg" onClick={acceptCookies} className="flex-1 min-h-[48px]">
             Accept
           </Button>
           <Button
-            size="sm"
+            size="lg"
             variant="outline"
             onClick={declineCookies}
-            className="flex-1"
+            className="flex-1 min-h-[48px]"
           >
             Decline
           </Button>
