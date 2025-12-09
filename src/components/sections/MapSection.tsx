@@ -28,6 +28,9 @@ export function MapSection({ location }: MapSectionProps) {
             alt={`Drain service area map for ${location.name} showing coverage by ${BRAND.brandName}`}
             className="w-full h-auto"
             loading="lazy"
+            width={800}
+            height={400}
+            decoding="async"
           />
           <div className="absolute bottom-4 left-4 bg-card/95 backdrop-blur rounded-lg px-4 py-2 flex items-center gap-2 shadow-md">
             <MapPin className="h-5 w-5 text-primary" />

@@ -48,7 +48,14 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
             {BRAND.logoUrl ? (
-              <img src={BRAND.logoUrl} alt={BRAND.brandName} className="h-10 w-auto" />
+              <img 
+                src={BRAND.logoUrl} 
+                alt={BRAND.brandName} 
+                className="h-10 w-auto" 
+                fetchPriority="high"
+                width={160}
+                height={40}
+              />
             ) : (
               <span className="text-xl font-bold text-primary">{BRAND.brandName}</span>
             )}
