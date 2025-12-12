@@ -5,7 +5,7 @@ import { MapSection } from "@/components/sections/MapSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { AIContentBlock } from "@/components/ai/AIContentBlock";
 import { SchemaScript } from "@/components/seo/SchemaScript";
-import { SEOHead } from "@/components/seo/SEOHead";
+import { RouteSEOHead } from "@/components/seo/RouteSEOHead";
 import { Breadcrumbs } from "@/components/nav/Breadcrumbs";
 import { CoverageStatement } from "@/components/sections/CoverageStatement";
 import { getLocationBySlug, LOCATIONS, PRIMARY_LOCATION } from "@/config/locations";
@@ -50,13 +50,7 @@ const LocationSubServiceDetail = () => {
 
   return (
     <Layout>
-      <SEOHead
-        metadata={{
-          title: `${subService.name} in ${location.name} | ${BRAND.brandName}`,
-          description: `Professional ${subService.name.toLowerCase()} services in ${location.name}, ${location.countyOrRegion}. Fast response, fixed pricing. Call ${BRAND.phone}`,
-          canonicalUrl: `/location/${location.slug}/${service.slug}/${subService.slug}`,
-        }}
-      />
+      <RouteSEOHead />
       <SchemaScript
         schema={[
           {

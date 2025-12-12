@@ -4,7 +4,7 @@ import { LeadForm } from "@/components/forms/LeadForm";
 import { CTASection } from "@/components/sections/CTASection";
 import { AIContentBlock } from "@/components/ai/AIContentBlock";
 import { SchemaScript } from "@/components/seo/SchemaScript";
-import { SEOHead } from "@/components/seo/SEOHead";
+import { RouteSEOHead } from "@/components/seo/RouteSEOHead";
 import { Breadcrumbs } from "@/components/nav/Breadcrumbs";
 import { getServiceBySlug, getSubServiceBySlug, SERVICES } from "@/config/services";
 import { BRAND } from "@/config/brand";
@@ -46,13 +46,7 @@ const SubServiceDetail = () => {
 
   return (
     <Layout>
-      <SEOHead
-        metadata={{
-          title: `${subService.name} | ${BRAND.brandName}`,
-          description: `${subService.description} Professional service across ${BRAND.serviceAreaLabel}. Call ${BRAND.phone}`,
-          canonicalUrl: `/services/${service.slug}/${subService.slug}`,
-        }}
-      />
+      <RouteSEOHead />
       <SchemaScript
         schema={[
           {

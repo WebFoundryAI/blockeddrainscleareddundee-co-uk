@@ -1,16 +1,15 @@
 import { Layout } from "@/components/layout/Layout";
 import { LeadForm } from "@/components/forms/LeadForm";
-import { SEOHead } from "@/components/seo/SEOHead";
+import { RouteSEOHead } from "@/components/seo/RouteSEOHead";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { BRAND } from "@/config/brand";
-import { getContactSEO } from "@/config/seo";
 import { generateContactPageSchema, generateLocalBusinessSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const Contact = () => {
   return (
     <Layout>
-      <SEOHead metadata={getContactSEO()} />
+      <RouteSEOHead />
       <SchemaScript schema={[
         generateContactPageSchema(),
         generateLocalBusinessSchema(),

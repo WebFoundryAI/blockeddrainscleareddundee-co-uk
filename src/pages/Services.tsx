@@ -3,17 +3,16 @@ import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { CTASection } from "@/components/sections/CTASection";
 import { AIContentBlock } from "@/components/ai/AIContentBlock";
 import { SchemaScript } from "@/components/seo/SchemaScript";
-import { SEOHead } from "@/components/seo/SEOHead";
+import { RouteSEOHead } from "@/components/seo/RouteSEOHead";
 import { BRAND } from "@/config/brand";
 import { PRIMARY_LOCATION } from "@/config/locations";
 import { SERVICES } from "@/config/services";
-import { getServicesSEO } from "@/config/seo";
 import { generateLocalBusinessSchema, generateServicesListSchema, generateBreadcrumbSchema } from "@/lib/schema";
 
 const Services = () => {
   return (
     <Layout>
-      <SEOHead metadata={getServicesSEO()} />
+      <RouteSEOHead />
       <SchemaScript schema={[
         generateLocalBusinessSchema(),
         generateServicesListSchema(SERVICES),

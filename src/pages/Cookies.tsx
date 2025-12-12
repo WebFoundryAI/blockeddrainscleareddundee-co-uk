@@ -1,5 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
-import { SEOHead } from "@/components/seo/SEOHead";
+import { RouteSEOHead } from "@/components/seo/RouteSEOHead";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { BRAND } from "@/config/brand";
 import { generateWebPageSchema, generateBreadcrumbSchema } from "@/lib/schema";
@@ -7,13 +7,7 @@ import { generateWebPageSchema, generateBreadcrumbSchema } from "@/lib/schema";
 const Cookies = () => {
   return (
     <Layout>
-      <SEOHead
-        metadata={{
-          title: `Cookie Policy | ${BRAND.brandName}`,
-          description: `Cookie policy for ${BRAND.brandName}. Learn about the cookies we use on our website.`,
-          canonicalUrl: "/cookies",
-        }}
-      />
+      <RouteSEOHead />
       <SchemaScript
         schema={[
           generateWebPageSchema(

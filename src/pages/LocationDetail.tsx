@@ -5,12 +5,11 @@ import { MapSection } from "@/components/sections/MapSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { AIContentBlock } from "@/components/ai/AIContentBlock";
 import { SchemaScript } from "@/components/seo/SchemaScript";
-import { SEOHead } from "@/components/seo/SEOHead";
+import { RouteSEOHead } from "@/components/seo/RouteSEOHead";
 import { Breadcrumbs } from "@/components/nav/Breadcrumbs";
 import { getLocationBySlug, LOCATIONS, PRIMARY_LOCATION } from "@/config/locations";
 import { SERVICES } from "@/config/services";
 import { BRAND } from "@/config/brand";
-import { getLocationSEO } from "@/config/seo";
 import { LOCATIONS_OG_IMAGE } from "@/config/ogImages";
 import { getLocationFAQs } from "@/config/faqs";
 import {
@@ -52,7 +51,7 @@ const LocationDetail = () => {
 
   return (
     <Layout>
-      <SEOHead metadata={getLocationSEO(location)} ogImage={LOCATIONS_OG_IMAGE} />
+      <RouteSEOHead ogImage={LOCATIONS_OG_IMAGE} />
       <SchemaScript
         schema={[
           generateLocalBusinessSchema(location),

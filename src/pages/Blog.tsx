@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/sections/CTASection";
-import { SEOHead } from "@/components/seo/SEOHead";
+import { RouteSEOHead } from "@/components/seo/RouteSEOHead";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { Skeleton } from "@/components/ui/skeleton";
-import { getBlogSEO } from "@/config/seo";
 import { BRAND } from "@/config/brand";
 import { generateBreadcrumbSchema } from "@/lib/schema";
 import { supabase } from "@/integrations/supabase/client";
@@ -47,7 +46,7 @@ const Blog = () => {
 
   return (
     <Layout>
-      <SEOHead metadata={getBlogSEO()} />
+      <RouteSEOHead />
       <SchemaScript schema={[
         blogSchema,
         generateBreadcrumbSchema([

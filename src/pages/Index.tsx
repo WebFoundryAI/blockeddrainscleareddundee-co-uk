@@ -10,11 +10,10 @@ import { TrustBadges } from "@/components/sections/TrustBadges";
 import { GuaranteesSection } from "@/components/sections/GuaranteesSection";
 import { AIContentBlock } from "@/components/ai/AIContentBlock";
 import { SchemaScript } from "@/components/seo/SchemaScript";
-import { SEOHead } from "@/components/seo/SEOHead";
+import { RouteSEOHead } from "@/components/seo/RouteSEOHead";
 import { BRAND } from "@/config/brand";
 import { PRIMARY_LOCATION, LOCATIONS } from "@/config/locations";
 import { SERVICES } from "@/config/services";
-import { getHomeSEO } from "@/config/seo";
 import {
   generateWebsiteSchema,
   generateLocalBusinessSchema,
@@ -35,7 +34,7 @@ const Index = () => {
 
   return (
     <Layout>
-      <SEOHead metadata={getHomeSEO()} />
+      <RouteSEOHead />
       <SchemaScript
         schema={[
           generateWebsiteSchema(),

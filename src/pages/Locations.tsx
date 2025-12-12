@@ -1,18 +1,17 @@
 import { Layout } from "@/components/layout/Layout";
 import { LocationsGrid } from "@/components/sections/LocationsGrid";
 import { CTASection } from "@/components/sections/CTASection";
-import { SEOHead } from "@/components/seo/SEOHead";
+import { RouteSEOHead } from "@/components/seo/RouteSEOHead";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { BRAND } from "@/config/brand";
 import { LOCATIONS } from "@/config/locations";
-import { getLocationsSEO } from "@/config/seo";
 import { generateLocalBusinessSchema, generateLocationsListSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import { Link } from "react-router-dom";
 
 const Locations = () => {
   return (
     <Layout>
-      <SEOHead metadata={getLocationsSEO()} />
+      <RouteSEOHead />
       <SchemaScript schema={[
         generateLocalBusinessSchema(),
         generateLocationsListSchema(LOCATIONS),

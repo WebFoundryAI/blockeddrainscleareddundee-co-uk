@@ -1,5 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
-import { SEOHead } from "@/components/seo/SEOHead";
+import { RouteSEOHead } from "@/components/seo/RouteSEOHead";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { BRAND } from "@/config/brand";
 import { generateWebPageSchema, generateBreadcrumbSchema } from "@/lib/schema";
@@ -7,13 +7,7 @@ import { generateWebPageSchema, generateBreadcrumbSchema } from "@/lib/schema";
 const Privacy = () => {
   return (
     <Layout>
-      <SEOHead
-        metadata={{
-          title: `Privacy Policy | ${BRAND.brandName}`,
-          description: `Privacy policy for ${BRAND.brandName}. Learn how we collect, use, and protect your personal information.`,
-          canonicalUrl: "/privacy",
-        }}
-      />
+      <RouteSEOHead />
       <SchemaScript
         schema={[
           generateWebPageSchema(

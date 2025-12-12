@@ -5,12 +5,11 @@ import { MapSection } from "@/components/sections/MapSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { AIContentBlock } from "@/components/ai/AIContentBlock";
 import { SchemaScript } from "@/components/seo/SchemaScript";
-import { SEOHead } from "@/components/seo/SEOHead";
+import { RouteSEOHead } from "@/components/seo/RouteSEOHead";
 import { Breadcrumbs } from "@/components/nav/Breadcrumbs";
 import { getLocationBySlug, LOCATIONS, PRIMARY_LOCATION } from "@/config/locations";
 import { getServiceBySlug, SERVICES } from "@/config/services";
 import { BRAND } from "@/config/brand";
-import { getServiceInLocationSEO } from "@/config/seo";
 import { getServiceOgImage } from "@/config/ogImages";
 import { getServiceInLocationFAQs } from "@/config/faqs";
 import {
@@ -57,7 +56,7 @@ const LocationServiceDetail = () => {
 
   return (
     <Layout>
-      <SEOHead metadata={getServiceInLocationSEO(service, location)} ogImage={getServiceOgImage(service.slug)} />
+      <RouteSEOHead ogImage={getServiceOgImage(service.slug)} />
       <SchemaScript
         schema={[
           ...generateServiceInLocationSchema(service, location),

@@ -4,12 +4,11 @@ import { LeadForm } from "@/components/forms/LeadForm";
 import { CTASection } from "@/components/sections/CTASection";
 import { AIContentBlock } from "@/components/ai/AIContentBlock";
 import { SchemaScript } from "@/components/seo/SchemaScript";
-import { SEOHead } from "@/components/seo/SEOHead";
+import { RouteSEOHead } from "@/components/seo/RouteSEOHead";
 import { Breadcrumbs } from "@/components/nav/Breadcrumbs";
 import { getServiceBySlug, SERVICES } from "@/config/services";
 import { LOCATIONS, PRIMARY_LOCATION } from "@/config/locations";
 import { BRAND } from "@/config/brand";
-import { getServiceSEO } from "@/config/seo";
 import { getServiceOgImage } from "@/config/ogImages";
 import { getServiceFAQs } from "@/config/faqs";
 import {
@@ -58,7 +57,7 @@ const ServiceDetail = () => {
 
   return (
     <Layout>
-      <SEOHead metadata={getServiceSEO(service)} ogImage={getServiceOgImage(service.slug)} />
+      <RouteSEOHead ogImage={getServiceOgImage(service.slug)} />
       <SchemaScript
         schema={[
           generateServiceSchema(service),

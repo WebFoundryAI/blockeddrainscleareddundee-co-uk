@@ -1,16 +1,15 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/sections/CTASection";
-import { SEOHead } from "@/components/seo/SEOHead";
+import { RouteSEOHead } from "@/components/seo/RouteSEOHead";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { BRAND } from "@/config/brand";
-import { getAboutSEO } from "@/config/seo";
 import { generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import { CheckCircle2, Users, Clock, Shield } from "lucide-react";
 
 const About = () => {
   return (
     <Layout>
-      <SEOHead metadata={getAboutSEO()} />
+      <RouteSEOHead />
       <SchemaScript schema={[
         generateOrganizationSchema(),
         generateBreadcrumbSchema([

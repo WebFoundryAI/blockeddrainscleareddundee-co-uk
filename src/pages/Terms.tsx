@@ -1,5 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
-import { SEOHead } from "@/components/seo/SEOHead";
+import { RouteSEOHead } from "@/components/seo/RouteSEOHead";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { BRAND } from "@/config/brand";
 import { generateWebPageSchema, generateBreadcrumbSchema } from "@/lib/schema";
@@ -7,13 +7,7 @@ import { generateWebPageSchema, generateBreadcrumbSchema } from "@/lib/schema";
 const Terms = () => {
   return (
     <Layout>
-      <SEOHead
-        metadata={{
-          title: `Terms of Service | ${BRAND.brandName}`,
-          description: `Terms and conditions for using ${BRAND.brandName} drainage services.`,
-          canonicalUrl: "/terms",
-        }}
-      />
+      <RouteSEOHead />
       <SchemaScript
         schema={[
           generateWebPageSchema(

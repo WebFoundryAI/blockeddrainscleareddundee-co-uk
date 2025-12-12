@@ -1,15 +1,14 @@
 import { Layout } from "@/components/layout/Layout";
 import { FAQSection, faqs } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
-import { SEOHead } from "@/components/seo/SEOHead";
+import { RouteSEOHead } from "@/components/seo/RouteSEOHead";
 import { SchemaScript } from "@/components/seo/SchemaScript";
-import { getFAQSEO } from "@/config/seo";
 import { generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
 
 const FAQ = () => {
   return (
     <Layout>
-      <SEOHead metadata={getFAQSEO()} />
+      <RouteSEOHead />
       <SchemaScript schema={[
         generateFAQSchema(faqs),
         generateBreadcrumbSchema([
