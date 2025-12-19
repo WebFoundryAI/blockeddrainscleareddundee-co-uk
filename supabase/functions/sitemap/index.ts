@@ -101,9 +101,10 @@ Deno.serve(async (req) => {
     const today = formatDate(new Date());
     const urls: string[] = [];
 
-    // Static pages
+    // Static pages (including llm.html for GEO/AI discovery)
     const staticPages = [
       { url: "/", priority: "1.0", changefreq: "weekly" },
+      { url: "/llm.html", priority: "0.5", changefreq: "monthly" },
       { url: "/services", priority: "0.9", changefreq: "weekly" },
       { url: "/locations", priority: "0.9", changefreq: "weekly" },
       { url: "/about", priority: "0.7", changefreq: "monthly" },
