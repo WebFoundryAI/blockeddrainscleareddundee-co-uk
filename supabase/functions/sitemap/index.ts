@@ -65,7 +65,7 @@ const LOCATIONS = [
   { slug: "chorlton" },
 ];
 
-const BASE_URL = "https://manchesterblockeddrains.co.uk";
+const BASE_URL = "https://manchesterblockeddrain.co.uk";
 
 function formatDate(_date: Date): string {
   // Return current date for sitemap freshness

@@ -5,7 +5,7 @@
  * Canonical rules:
  * - Homepage: "/" 
  * - All other routes: NO trailing slash
- * - Base domain: https://manchesterblockeddrains.co.uk
+ * - Base domain: https://manchesterblockeddrain.co.uk
  */
 
 import { BRAND } from "@/config/brand";
@@ -20,7 +20,7 @@ export interface RouteMeta {
 }
 
 const BASE_URL = `https://${BRAND.domain}`;
-const DEFAULT_OG_IMAGE = `${BASE_URL}/og/manchesterblockeddrains-og.jpg`;
+const DEFAULT_OG_IMAGE = `${BASE_URL}/og/manchesterblockeddrain-og.jpg`;
 
 // Routes that should not be indexed
 const NOINDEX_ROUTES = [

@@ -37,7 +37,7 @@ export type BrandConfig = {
 
 export const BRAND: BrandConfig = {
   brandName: "Blocked Drains Manchester",
-  domain: "manchesterblockeddrains.co.uk",
+  domain: "manchesterblockeddrain.co.uk",
   primaryLocation: "Manchester",
   serviceAreaLabel: "Manchester and Greater Manchester",
   phone: "03338802296",

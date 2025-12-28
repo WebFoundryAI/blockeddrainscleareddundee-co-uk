@@ -142,7 +142,7 @@ export function getSeoMeta(pathname: string, params: RouteParams = {}): SEOMeta 
       description: "Professional drain unblocking in Manchester. Emergency call-outs, CCTV surveys, drain repairs. No call-out fee, fixed pricing. Call 0333 880 2296.",
       canonicalUrl,
       noIndex,
-      ogImage: `${BASE_URL}/og/manchesterblockeddrains-og.jpg`,
+      ogImage: `${BASE_URL}/og/manchesterblockeddrain-og.jpg`,
     };
   }
 

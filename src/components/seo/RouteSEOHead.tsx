@@ -4,7 +4,7 @@
  * Uses centralized routeMeta.ts for static routes
  * 
  * Canonical rules enforced:
- * - Homepage: https://manchesterblockeddrains.co.uk/
+ * - Homepage: https://manchesterblockeddrain.co.uk/
  * - All other routes: NO trailing slash
  */
 
@@ -22,7 +22,7 @@ import {
 } from "@/seo/routeMeta";
 
 const BASE_URL = `https://${BRAND.domain}`;
-const DEFAULT_OG_IMAGE = `${BASE_URL}/og/manchesterblockeddrains-og.jpg`;
+const DEFAULT_OG_IMAGE = `${BASE_URL}/og/manchesterblockeddrain-og.jpg`;
 
 interface RouteSEOHeadProps {
   override?: {
