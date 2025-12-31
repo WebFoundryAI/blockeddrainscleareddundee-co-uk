@@ -29,6 +29,30 @@ const MANCHESTER_FAQS = [
   {
     question: "What payment methods do you accept?",
     answer: "We accept cash, bank transfer, and all major debit and credit cards. Payment is due on completion of the work. For larger repair jobs, we can discuss payment options before we start."
+  },
+  {
+    question: "Can you unblock a drain the same day?",
+    answer: "In most cases, yes. We aim for same-day service for all blocked drain calls in Manchester. For emergencies like sewage backing up or flooding, we prioritise urgent attendance and can often be with you within the hour."
+  },
+  {
+    question: "What causes drains to block?",
+    answer: "The most common causes are fat and grease build-up in kitchen drains, hair and soap in bathroom drains, tree roots growing into pipes, and foreign objects being flushed. Older properties with clay pipes are particularly prone to root intrusion and pipe deterioration."
+  },
+  {
+    question: "Do you offer a guarantee on your work?",
+    answer: "Yes. All our unblocking work comes with a satisfaction guarantee. For drain repairs and relining, we provide written guarantees covering materials and workmanship. The exact terms depend on the type of repair carried out."
+  },
+  {
+    question: "Are your engineers qualified and insured?",
+    answer: "Absolutely. All our drainage engineers are fully trained, experienced, and DBS checked. We carry public liability insurance up to £5 million, so you're fully protected if anything goes wrong."
+  },
+  {
+    question: "Will I need to dig up my garden for drain repairs?",
+    answer: "Not always. We offer no-dig repair options including patch lining and full relining that can fix cracked or damaged pipes without excavation. We'll always recommend the least disruptive solution that properly fixes the problem."
+  },
+  {
+    question: "Can you help with a pre-purchase drain survey?",
+    answer: "Yes, we regularly carry out CCTV drain surveys for homebuyers. We'll inspect the drainage system, identify any issues, and provide a detailed report with video footage you can share with your solicitor or use in negotiations."
   }
 ];
 

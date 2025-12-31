@@ -13,7 +13,8 @@ const SitemapXmlRedirect = () => {
 };
 import { ScrollToTop } from "./components/ScrollToTop";
 
-// Canonical URL normalizer - ensures consistent trailing slash format
+// Canonical URL normalizer - ensures consistent URL format
+// NO trailing slash except homepage (matches sitemap convention)
 // Uses replaceState to avoid adding history entries
 const CanonicalNormalizer = () => {
   const location = useLocation();
@@ -21,12 +22,15 @@ const CanonicalNormalizer = () => {
   useEffect(() => {
     const { pathname, search, hash } = location;
     
-    // Skip static files and root path
-    if (pathname === "/" || pathname.includes(".")) return;
+    // Skip static files
+    if (pathname.includes(".")) return;
     
-    // Add trailing slash if missing (to match sitemap convention)
-    if (!pathname.endsWith("/")) {
-      const normalizedUrl = `${pathname}/${search}${hash}`;
+    // Homepage should have trailing slash
+    if (pathname === "/") return;
+    
+    // Remove trailing slash if present (non-homepage)
+    if (pathname.endsWith("/")) {
+      const normalizedUrl = `${pathname.replace(/\/+$/, "")}${search}${hash}`;
       window.history.replaceState(null, "", normalizedUrl);
     }
   }, [location]);
