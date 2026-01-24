@@ -5,6 +5,9 @@ import { SERVICES } from '../data/services';
 import { LOCATIONS } from '../data/locations';
 import { GENERIC_FAQS } from '../data/faqs';
 import { HOME_INTRO } from '../data/staticContent';
+import { getFAQSchema } from '../utils/schema';
+
+const faqSchema = getFAQSchema(GENERIC_FAQS);
 
 // SEO-optimized title (50-60 chars) - keyword-focused for primary search term
 const title = `Blocked Drains Manchester | 24/7 Local Drain Unblocking`;
@@ -23,6 +26,9 @@ const priorityLinks = SERVICES.slice(0, 3).flatMap((service) =>
 ---
 
 <BaseLayout title={title} description={description} canonical="/">
+  <!-- FAQPage Schema for homepage FAQs -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
   <!-- Hero Section -->
   <section class="hero-section relative">
     <div class="absolute inset-0 z-0">
