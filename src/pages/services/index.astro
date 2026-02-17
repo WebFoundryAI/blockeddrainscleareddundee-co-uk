@@ -27,9 +27,7 @@ const webPageSchema = getWebPageSchema({
 const combinedPageSchema = [breadcrumbSchema, webPageSchema];
 ---
 
-<BaseLayout title={title} description={description} canonical="/services/">
-  <!-- Page Schemas (Breadcrumb + WebPage) -->
-  <script type="application/ld+json" set:html={serializeSchema(combinedPageSchema)} />
+<BaseLayout title={title} description={description} canonical="/services/" schema={combinedPageSchema}>
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-overlay py-16 md:py-20">
@@ -48,7 +46,7 @@ const combinedPageSchema = [breadcrumbSchema, webPageSchema];
   <!-- Overview -->
   <section class="section-padding bg-muted/30">
     <div class="container-wide px-4">
-      <nav class="text-sm mb-6">
+      <nav class="text-sm mb-6" aria-label="Breadcrumb">
         <a href="/" class="text-primary hover:underline">Home</a>
         <span class="mx-2 text-muted-foreground">/</span>
         <span class="text-muted-foreground">Services</span>

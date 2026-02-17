@@ -68,10 +68,7 @@ const totalPages =
   1; // for /blog/ index page
 ---
 
-<BaseLayout title={title} description={description} canonical="/sitemap/" noindex={true}>
-  <!-- BreadcrumbList Schema -->
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-
+<BaseLayout title={title} description={description} canonical="/sitemap/" noindex={true} schema={breadcrumbSchema}>
   <section class="section-padding">
     <div class="container-wide px-4">
       <h1 class="text-3xl font-bold mb-2">Sitemap</h1>

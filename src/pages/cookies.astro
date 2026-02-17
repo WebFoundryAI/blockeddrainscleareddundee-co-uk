@@ -16,10 +16,7 @@ const breadcrumbSchema = getBreadcrumbSchema([
 ]);
 ---
 
-<BaseLayout title={title} description={description} canonical="/cookies">
-  <!-- BreadcrumbList Schema -->
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-
+<BaseLayout title={title} description={description} canonical="/cookies" schema={breadcrumbSchema}>
   <section class="section-padding">
     <div class="container-narrow px-4">
       <h1 class="text-3xl md:text-4xl font-bold mb-6">Cookie Policy</h1>

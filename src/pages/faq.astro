@@ -28,9 +28,7 @@ const webPageSchema = getWebPageSchema({
 const combinedPageSchema = [breadcrumbSchema, faqSchema, webPageSchema];
 ---
 
-<BaseLayout title={title} description={description} canonical="/faq/">
-  <!-- Page Schemas (Breadcrumb + FAQ + WebPage) -->
-  <script type="application/ld+json" set:html={serializeSchema(combinedPageSchema)} />
+<BaseLayout title={title} description={description} canonical="/faq/" schema={combinedPageSchema}>
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-overlay py-16 md:py-20">

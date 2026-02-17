@@ -10,7 +10,7 @@ import { getBreadcrumbSchema, getWebPageSchema, serializeSchema } from '../utils
 const title = `About Us | Manchester's Trusted Drainage Specialists`;
 
 // SEO-optimized description (120-155 chars) with benefits and CTA
-const description = `Meet ${BRAND.brandName} - fully insured, experienced drainage engineers serving Greater Manchester 24/7. No call-out fee, guaranteed work. Call ${BRAND.phoneFormatted}.`;
+const description = `Meet ${BRAND.brandName} - fully insured drainage engineers serving Greater Manchester 24/7. No call-out fee. Call ${BRAND.phoneFormatted}.`;
 
 const breadcrumbItems = [
   { name: "Home", url: "/" },
@@ -29,9 +29,7 @@ const webPageSchema = getWebPageSchema({
 const combinedPageSchema = [breadcrumbSchema, webPageSchema];
 ---
 
-<BaseLayout title={title} description={description} canonical="/about/">
-  <!-- Page Schemas (Breadcrumb + WebPage) -->
-  <script type="application/ld+json" set:html={serializeSchema(combinedPageSchema)} />
+<BaseLayout title={title} description={description} canonical="/about/" schema={combinedPageSchema}>
 
   <!-- Hero Section -->
   <section class="hero-section">
