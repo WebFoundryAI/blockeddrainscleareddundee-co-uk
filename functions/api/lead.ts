@@ -29,6 +29,27 @@ export const onRequestPost = async (context: any) => {
   if (String(payload.company ?? '').trim()) errors.push('spam detected');
   if (errors.length) return Response.json({ error: errors.join(', '), fields: errors }, { status: 400 });
 
+  // Input length validation
+  const name = String(payload.name ?? '').trim();
+  const phone = String(payload.phone ?? '').trim();
+  const postcode = String(payload.postcode ?? '').trim();
+  const address = String(payload.address ?? '').trim();
+  const notes = String(payload.notes ?? '').trim();
+
+  if (name.length > 100) return Response.json({ error: 'Name must be 100 characters or fewer.' }, { status: 400 });
+  if (phone.length > 30) return Response.json({ error: 'Phone number is too long.' }, { status: 400 });
+  if (postcode.length > 10) return Response.json({ error: 'Postcode is too long.' }, { status: 400 });
+  if (address.length > 300) return Response.json({ error: 'Address must be 300 characters or fewer.' }, { status: 400 });
+  if (notes.length > 2000) return Response.json({ error: 'Notes must be 2000 characters or fewer.' }, { status: 400 });
+
+  // Phone format: UK numbers — digits, spaces, dashes, optional leading +
+  const phoneRegex = /^\+?[\d\s\-()]{7,30}$/;
+  if (!phoneRegex.test(phone)) return Response.json({ error: 'Please enter a valid UK phone number.' }, { status: 400 });
+
+  // Postcode format: UK postcodes
+  const postcodeRegex = /^[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}$/i;
+  if (!postcodeRegex.test(postcode)) return Response.json({ error: 'Please enter a valid UK postcode.' }, { status: 400 });
+
   const db = context.env.DB;
   if (!db) {
     return Response.json({ error: 'Database not configured' }, { status: 500 });
@@ -50,7 +71,8 @@ export const onRequestPost = async (context: any) => {
       context.request.headers.get('user-agent') || null,
     ).run();
   } catch (err: any) {
-    return Response.json({ error: 'Failed to store lead', details: err.message }, { status: 502 });
+    console.error('Lead storage error:', err);
+    return Response.json({ error: 'Unable to save your request. Please try calling us.' }, { status: 502 });
   }
 
   return Response.json({ success: true });

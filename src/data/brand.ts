@@ -11,6 +11,11 @@ export const BRAND = {
   postcode: "M2 3WQ",
   tagline: "Fast, Reliable Drainage Solutions",
   emergencyAvailable: true,
+
+  // Per-site tracking & verification — update these when cloning the template
+  ga4Id: "G-ZBN7YE9HZJ",
+  gscVerification: "K-EecGB0etoqiVHnYYUt2Sc6LrEKjoGmykJD-HOd7fo",
+
   socialProfiles: [
     "https://www.facebook.com/BlockedDrainsManchester",
     "https://twitter.com/DrainManchester",

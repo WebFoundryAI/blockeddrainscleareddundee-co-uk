@@ -8,57 +8,10 @@ const siteUrl = `https://${BRAND.domain}`;
 const ALL_SERVICE_AREAS = LOCATIONS.map(loc => loc.name);
 
 /**
- * Sample customer reviews for Review schema
- * These represent real customer feedback patterns
+ * REMOVED: Fake customer reviews and aggregate rating.
+ * These had no verified third-party source (Google Business Profile, Trustpilot, etc.).
+ * Re-enable with real, verifiable review data when available.
  */
-const CUSTOMER_REVIEWS = [
-  {
-    author: "James Wilson",
-    datePublished: "2024-11-15",
-    reviewRating: 5,
-    reviewBody: "Absolutely fantastic service! Called at 7am with a blocked drain emergency and they were here within an hour. The engineer was professional, explained everything clearly, and had the blockage cleared in no time. Highly recommend!"
-  },
-  {
-    author: "Sarah Thompson",
-    datePublished: "2024-10-28",
-    reviewRating: 5,
-    reviewBody: "Used Blocked Drains Manchester for a CCTV survey after repeated drainage issues. They identified the root cause and provided a clear report with options. Very thorough and reasonably priced."
-  },
-  {
-    author: "Michael Davies",
-    datePublished: "2024-10-12",
-    reviewRating: 5,
-    reviewBody: "Third time using this company and they never disappoint. Quick response, fair pricing, and excellent workmanship. The no call-out fee policy is a huge plus."
-  },
-  {
-    author: "Emma Roberts",
-    datePublished: "2024-09-30",
-    reviewRating: 4,
-    reviewBody: "Great service for our blocked kitchen drain. The engineer arrived on time and was very knowledgeable. Would definitely use again."
-  },
-  {
-    author: "David Clarke",
-    datePublished: "2024-09-18",
-    reviewRating: 5,
-    reviewBody: "Emergency call-out on a Sunday evening and they still came within 2 hours. Brilliant service when we really needed it. Can't thank them enough!"
-  },
-  {
-    author: "Lisa Sherwood",
-    datePublished: "2024-08-25",
-    reviewRating: 5,
-    reviewBody: "Professional from start to finish. The drain jetting service completely cleared our outdoor drains. Very impressed with the before and after difference."
-  }
-];
-
-/**
- * Aggregate rating data
- */
-const AGGREGATE_RATING = {
-  ratingValue: 4.9,
-  reviewCount: 247,
-  bestRating: 5,
-  worstRating: 1
-};
 
 /**
  * Base LocalBusiness schema for Plumber type
@@ -122,13 +75,6 @@ export function getBaseBusinessSchema() {
       }))
     },
     "sameAs": BRAND.socialProfiles,
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": AGGREGATE_RATING.ratingValue,
-      "reviewCount": AGGREGATE_RATING.reviewCount,
-      "bestRating": AGGREGATE_RATING.bestRating,
-      "worstRating": AGGREGATE_RATING.worstRating
-    },
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": `+44${BRAND.phone.substring(1)}`,
@@ -398,33 +344,7 @@ export function getBlogArticleSchema(post: {
   };
 }
 
-/**
- * Reviews schema - Individual customer reviews
- * Can be used standalone or combined with business schema
- */
-export function getReviewsSchema() {
-  return CUSTOMER_REVIEWS.map(review => ({
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "author": {
-      "@type": "Person",
-      "name": review.author
-    },
-    "datePublished": review.datePublished,
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": review.reviewRating,
-      "bestRating": 5,
-      "worstRating": 1
-    },
-    "reviewBody": review.reviewBody,
-    "itemReviewed": {
-      "@type": "Plumber",
-      "@id": `${siteUrl}/#business`,
-      "name": BRAND.brandName
-    }
-  }));
-}
+// REMOVED: getReviewsSchema() — was outputting fake reviews into JSON-LD
 
 /**
  * Organization schema - Standalone organization entity
@@ -598,21 +518,8 @@ export function getCompleteHomepageSchema() {
   const businessSchema = getBaseBusinessSchema();
   const organizationSchema = getOrganizationSchema();
   const websiteSchema = getWebSiteSchema();
-  const reviewSchemas = getReviewsSchema();
 
-  return [businessSchema, organizationSchema, websiteSchema, ...reviewSchemas];
+  return [businessSchema, organizationSchema, websiteSchema];
 }
 
-/**
- * Get aggregate rating data for external use
- */
-export function getAggregateRatingData() {
-  return AGGREGATE_RATING;
-}
-
-/**
- * Get customer reviews data for external use
- */
-export function getCustomerReviews() {
-  return CUSTOMER_REVIEWS;
-}
+// REMOVED: getAggregateRatingData() and getCustomerReviews() — fake data removed
