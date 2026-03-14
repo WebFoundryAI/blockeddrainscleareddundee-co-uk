@@ -1,8 +1,8 @@
 export const BRAND = {
   brandName: "Blocked Drains Cleared Dundee",
   domain: "blockeddrainscleareddundee.co.uk",
-  primaryLocation: "Manchester",
-  serviceAreaLabel: "Manchester and surrounding areas",
+  primaryLocation: "Dundee",
+  serviceAreaLabel: "Dundee and surrounding areas",
   phone: "01382225517",
   phoneFormatted: "01382 225517",
   email: "info@blockeddrainscleareddundee.co.uk",
