@@ -1,5 +1,5 @@
-# Glasgow Drain Unblocker - robots.txt
-# https://glasgowdrainunblocker.co.uk
+# Blocked Drains Cleared Dundee - robots.txt
+# https://blockeddrainscleareddundee.co.uk
 # Last updated: 2026-03-05
 
 # ==============================================
@@ -47,4 +47,4 @@ Disallow: /_astro/
 Sitemap: https://blockeddrainscleareddundee.co.uk/sitemap.xml
 
 # Host preference (canonical non-www HTTPS)
-Host: https://glasgowdrainunblocker.co.uk
+Host: https://blockeddrainscleareddundee.co.uk
