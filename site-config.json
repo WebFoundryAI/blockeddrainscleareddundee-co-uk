@@ -1,0 +1,14 @@
+{
+  "site_name": "Dundee Plumber",
+  "city": "Dundee",
+  "region": "Tayside",
+  "country": "Scotland",
+  "tier": 2,
+  "domain": "blockeddrainscleareddundee.co.uk",
+  "layout_variant": "hero-cta",
+  "theme_variant": "trust-blue",
+  "status": "active",
+  "github_repo": "https://github.com/WebFoundryAI/blockeddrainscleareddundee-co-uk.git",
+  "source_folder": "rank-to-rent-sites/blockeddrainscleareddundee-co-uk",
+  "notes": "Tier 2 site. Migrated from existing rank-to-rent-sites folder."
+}
